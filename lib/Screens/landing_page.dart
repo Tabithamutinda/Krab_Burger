@@ -1,22 +1,17 @@
 
 import 'dart:async';
+import 'package:krab_burger/Screens/login_page.dart';
+import 'package:krab_burger/Screens/sign_up.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:krab_burger/AppStuff/app_pics.dart';
 import 'package:krab_burger/AppStuff/app_strings.dart';
+import 'package:krab_burger/AppStuff/app_color.dart';
 
 
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-         debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
-    );
-  }
-}
+
 
 // class SplashScreen extends StatefulWidget {
 //   @override
@@ -36,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: AppColor.yellow,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,8 +60,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.yellowAccent,
-        title: Text(AppStrings.appBar),
+        backgroundColor: AppColor.yellow,
+        title: Text(AppStrings.appBar,
+        style: TextStyle(color: Colors.black),),
+         leading:
+        IconButton( onPressed: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>WelcomePage()));
+
+        },icon:Icon(Icons.arrow_back_ios,size: 20,color: Colors.black,)),
       ),
       body: Container(
         child: Center(
@@ -110,7 +111,7 @@ class _WelcomePageState extends State<WelcomePage> {
                      child: Container(
                       width: 180,
                       height: 180,
-                      color: Colors.yellow,
+                      color: AppColor.yellow,
                       
                     ),
                   ),
@@ -137,13 +138,16 @@ class _WelcomePageState extends State<WelcomePage> {
                   Padding(
                     padding:const EdgeInsets.all(20),
                   child: FlatButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>SignupPage()));
+
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)
                     ),
-                    color: Colors.yellow,
+                    color: AppColor.yellow,
                     padding: EdgeInsets.all(25),
-                    child: Text(AppStrings.signIn,
+                    child: Text(AppStrings.signUp,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -161,16 +165,19 @@ class _WelcomePageState extends State<WelcomePage> {
                      child: Material(
                    color: Colors.transparent,
                    child: InkWell(
-                     splashColor: Colors.yellow.withOpacity(0.2),
-                     highlightColor: Colors.yellow.withOpacity(0.2),
-                     onTap: (){},
+                     splashColor: AppColor.yellow.withOpacity(0.2),
+                     highlightColor: AppColor.yellow.withOpacity(0.2),
+                     onTap: (){
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>LoginPage()));
+
+                     },
                     child: Container(
                    padding: EdgeInsets.all(20),
                    child: Text(AppStrings.logIn,
                    textAlign: TextAlign.center,
                    style: TextStyle(
                      fontSize: 16,
-                     color: Colors.yellow,
+                     color: AppColor.yellow,
                      fontWeight: FontWeight.bold
                    ),
                    ),
