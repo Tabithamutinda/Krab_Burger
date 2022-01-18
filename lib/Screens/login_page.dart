@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:krab_burger/AppStuff/app_strings.dart';
+import 'package:krab_burger/Screens/home_page.dart';
 import 'package:krab_burger/Screens/landing_page.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:flutter/services.dart';

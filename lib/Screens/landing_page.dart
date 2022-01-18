@@ -50,34 +50,6 @@ import 'package:krab_burger/AppStuff/app_color.dart';
   }
 
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColor.yellow,
-        title: Text(AppStrings.appBar,
-        style: TextStyle(color: Colors.black),),
-         leading:
-        IconButton( onPressed: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>WelcomePage()));
-
-        },icon:Icon(Icons.arrow_back_ios,size: 20,color: Colors.black,)),
-      ),
-      body: Container(
-        child: Center(
-          child:Text(AppStrings.declare),
-        ),
-      ),
-      
-    );
-  }
-}
 
 class WelcomePage extends StatefulWidget {
   @override

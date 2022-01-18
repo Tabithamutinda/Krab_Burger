@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:krab_burger/AppStuff/app_pics.dart';
 import 'package:krab_burger/AppStuff/app_strings.dart';
+import 'package:krab_burger/Screens/home_page.dart';
 import 'package:krab_burger/Screens/landing_page.dart';
 
 
